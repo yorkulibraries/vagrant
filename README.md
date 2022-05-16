@@ -7,6 +7,11 @@ This project provides the starter box for development.
 ansible-galaxy install -r requirements.yml
 ```
 
+## IP address of the box
+```
+192.168.168.168
+```
+
 ### Example setup new rails app server
 Suppose you have [ansible-rails](https://github.com/yorkulibraries/ansible-rails) playbooks installed at ~/ansible-rails, you can setup Rails as followed:
 

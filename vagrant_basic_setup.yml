@@ -21,10 +21,19 @@
         - ntp
         - htop
         - mailutils
+        - acl
 
     - name: Set the timezone to America/Toronto 
       timezone: "name=America/Toronto"
 
     - name: Make sure ntp is started, and is enabled on restart.
       service: name=ntp state=started enabled=yes
+
+    - name: copy /etc/skel/.bash_aliases
+      copy:
+        src: etc/skel/.bash_aliases
+        dest: /etc/skel/.bash_aliases
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
 

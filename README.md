@@ -18,3 +18,10 @@ Suppose you have [ansible-rails](https://github.com/yorkulibraries/ansible-rails
 ```
 ansible-playbook ~/ansible-rails/add_rails_app.yml -e "app=fooapp puma_port=3000 ruby_version=2.7.5"
 ```
+
+After the app has been setup, you can ssh into the box like followed:
+
+```
+ssh fooapp@127.0.0.1 -p2222
+```
+

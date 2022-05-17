@@ -25,3 +25,8 @@ After the app has been setup, you can ssh into the box like followed:
 ssh fooapp@127.0.0.1 -p2222
 ```
 
+Edit /etc/hosts and add an entry like followed so you can access the app from a browser at http://fooapp.library.yorku.ca/
+
+```
+192.168.168.168 fooapp.library.yorku.ca
+```

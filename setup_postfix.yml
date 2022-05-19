@@ -3,6 +3,8 @@
   hosts: all
   roles:
     - { role: geerlingguy.postfix }
+  vars_files:
+    - vars/postfix.yml
   become: yes
   gather_facts: yes
 
@@ -12,7 +14,7 @@
     lineinfile:
       dest: /etc/postfix/main.cf
       regex: '^relayhost ='
-      line: "relayhost = mailrelay.yorku.ca"
+      line: "relayhost = {{ postfix_relayhost }}"
       state: present
     notify: restart postfix
 
@@ -20,7 +22,7 @@
     lineinfile:
       dest: /etc/postfix/main.cf
       regex: '^myhostname ='
-      line: "myhostname = library.yorku.ca"
+      line: "myhostname = {{ postfix_myhostname }}"
       state: present
 
   handlers:
